@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import mongoose from "mongoose";
-import Experience from "./experience.model.js";
-import Project from "./project.model.js";
+import Experience from "@models/experience.model.js";
+import Project from "./models/project.model.js";
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -11,9 +11,9 @@ const MONGO_URI = process.env.MONGO_URI;
 async function connectDB() {
   try {
     await mongoose.connect(MONGO_URI);
-    console.log("✅ MongoDB connected!");
+    console.log("MongoDB connected!");
   } catch (err) {
-    console.error("❌ MongoDB connection error:", err);
+    console.error("MongoDB connection error:", err);
   }
 }
 
@@ -50,8 +50,6 @@ async function addSampleData() {
     githubLink: "https://github.com/MokeyCodes/Soccer-Market-Value-Linear-Regression",
     deploymentLink: null,
   });
-
-  console.log("✨ Sample documents inserted!");
 }
 
 connectDB().then(addSampleData);
