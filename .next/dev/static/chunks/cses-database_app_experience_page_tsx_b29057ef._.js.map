@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/ethannguyen-huu/CSES%20Onboarding/cses-database/app/experience/page.tsx"],"sourcesContent":["\"use client\";\n\nasync function getExperienceData () {\n    const url = \"/api/experience\";\n    try {\n        const response = await fetch(url);\n        if (!response.ok) {\n            throw new Error(`Response status: ${response.status}`);\n        }\n\n\n        const result = await response.json();\n        console.log(result);\n    } catch (error) {\n        console.error(error.message);\n    }\n}"],"names":[],"mappings":";AAAA;AAEA,eAAe;IACX,MAAM,MAAM;IACZ,IAAI;QACA,MAAM,WAAW,MAAM,MAAM;QAC7B,IAAI,CAAC,SAAS,EAAE,EAAE;YACd,MAAM,IAAI,MAAM,CAAC,iBAAiB,EAAE,SAAS,MAAM,EAAE;QACzD;QAGA,MAAM,SAAS,MAAM,SAAS,IAAI;QAClC,QAAQ,GAAG,CAAC;IAChB,EAAE,OAAO,OAAO;QACZ,QAAQ,KAAK,CAAC,MAAM,OAAO;IAC/B;AACJ"}}]
+}
